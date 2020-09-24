@@ -1,0 +1,28 @@
+{
+  "name": "weddriverio",
+  "version": "1.0.0",
+  "description": "Tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/wdio ./wdio.conf.js"
+  },
+  "author": "Baal",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/dot-reporter": "^6.4.7",
+    "@wdio/local-runner": "^6.5.2",
+    "@wdio/mocha-framework": "^6.5.0",
+    "@wdio/spec-reporter": "^6.4.7",
+    "@wdio/sync": "^6.5.0",
+    "chai": "^4.2.0",
+    "chai-webdriverio": "^1.0.0",
+    "chromedriver": "^85.0.1",
+    "local-runner": "^0.1.1-alpha",
+    "wdio-chromedriver-service": "^6.0.4",
+    "webdriver": "^5.23.0",
+    "webdriverio": "^5.23.0"
+  },
+  "dependencies": {
+    "@wdio/cli": "^6.5.2"
+  }
+}
