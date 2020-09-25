@@ -27,6 +27,51 @@ class Internet {
     get iFrameBody() {return $('#tinymce')}
     get iFrame() { return $('#mceu_27 #mce_0_ifr')}
 
+    get columnA() { return $('#column-a')}
+    get columnB() { return $('#column-b')}
+
+    get columnAHeader() { return $('#column-a header')}
+    get columnBHeader() { return $('#column-b header')}
+
+    get draggable() { return $('#draggable')}
+    get droppable() { return $('#droppable')}
+    get droppableParagraph() { return $('#droppable p')} 
+
+    get dropdownMenu() { return $('#dropdown')}
+    get dropdownMenuOption1() { return $('#dropdown option:nth-child(2)')}
+    get dropdownMenuOption2() { return $('#dropdown option:nth-child(3)')}
+
+    clickDropdownMenu() {
+        this.dropdownMenu.waitForDisplayed()
+        this.dropdownMenu.click()
+    }
+
+    clickDropdownMenuOption1() {
+        this.dropdownMenuOption1.waitForDisplayed()
+        this.dropdownMenuOption1.click()
+    }
+
+    clickDropdownMenuOption2() {
+        this.dropdownMenuOption2.waitForDisplayed()
+        this.dropdownMenuOption2.click()
+    }
+
+    /**
+     * Drag and Drop
+     */
+    dragDraggableToDroppable() {
+        this.draggable.waitForDisplayed()
+        this.draggable.dragAndDrop(this.droppable)
+    }
+
+    /**
+     * Drag box A to the box B
+     */
+    dragColumnAToColumnB() {
+        this.columnA.waitForDisplayed()
+        this.columnA.dragAndDrop(this.columnB)
+    }
+
     /**
      * Enter text in the iframe
      * @param {String} text text that need to be entered
