@@ -16,6 +16,62 @@ class Internet {
     get username() { return $('#username')}
     get password() { return $('#password')}
 
+    figures(index) { return $(`.example .figure:nth-child(${index}) img`) }
+    figureDetails(index) {return $(`.example .figure:nth-child(${index}) .figcaption h5`) }
+
+    get target() { return $('.example #target')}
+    get result() { return $('.example #result')}
+
+    /**
+     * scrolls to the page footer
+     */
+    scrollToPageFooter() {
+        this.pageFooter.scrollIntoView()
+    }
+
+    /**
+     * Clicks the target input field
+     */
+    clickTarget() {
+        this.target.waitForDisplayed()
+        this.target.click()
+    }
+
+    /**
+     * Send keybord keys to Target
+     * @param {String} text The keybord text to enter
+     */
+    sendKeysToTarget(text) {
+        this.target.waitForDisplayed()
+        this.target.keys(text)
+    }
+
+    /**
+     * return the text of the returned element
+     */
+    getResultText() {
+        this.result.waitForDisplayed()
+        return this.result.getText()
+    }
+
+    /**
+     * Hover over the specified image
+     * @param {String} index the specific image of the i,age
+     */
+    hoverOnFigure(index) {
+        this.figures(index).waitForDisplayed()
+        this.figures(index).moveTo(1, 1)
+    }
+
+    /**
+     * Return the text of the figured details
+     * @param {Number} index the index ogf the element
+     */
+    getFigureDetailsText(index) {
+        this.figureDetails(index).waitForDisplayed()
+        return this.figureDetails(index).getText()
+    }
+
     /**
      * Enter the username into the field
      * @param {String} text username to be entered
