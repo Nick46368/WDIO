@@ -22,6 +22,30 @@ class Internet {
     get target() { return $('.example #target')}
     get result() { return $('.example #result')}
 
+    get hereLink() { return $('.example a')}
+
+    get iFrameBody() {return $('#tinymce')}
+    get iFrame() { return $('#mceu_27 #mce_0_ifr')}
+
+    /**
+     * Enter text in the iframe
+     * @param {String} text text that need to be entered
+     */
+    sendTextToBody(text){
+        this.iFrameBody.waitForDisplayed()
+        this.iFrameBody.clearValue()
+        this.iFrameBody.click()
+        this.iFrameBody.keys(text)
+    }
+
+    /**
+     * Click the "click here" link
+     */
+    clickHereLink() {
+        this.hereLink.waitForDisplayed()
+        this.hereLink.click()
+    }
+
     /**
      * scrolls to the page footer
      */
