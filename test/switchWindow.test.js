@@ -9,6 +9,5 @@ describe('Switch Window', function() {
         assert.equal(true, internetPage.h3Header.isExisting())
         assert.equal(true, internetPage.h3Header.isDisplayed())
         assert.equal('New Window', internetPage.h3Header.getText())
-  
     })
 })

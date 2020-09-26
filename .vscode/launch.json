@@ -12,7 +12,7 @@
             // "port": "5859",
             // "timeout": 66666,
             // "runtimeExecutable": "${workspaceRoot}/node_modules/@wdio/cli/bin/wdio.js",
-            "args": ["wdio.conf.js", "--spec", "scrollTo.test.js"],
+            "args": ["wdio.conf.js", "--spec", "test.js"],
             "cwd": "${workspaceFolder}",
             "autoAttachChildProcesses": true,
             "program": "${workspaceRoot}/node_modules/@wdio/cli/bin/wdio.js",

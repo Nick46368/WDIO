@@ -43,6 +43,44 @@ class Internet {
 
     javascriptAlertButton(index) { return $(`.example li:nth-child(${index}) button`)}
 
+    get enableButton() { return $('#input-example button') }
+    get inputEnabledField() { return $('#input-example input')}
+
+    get exampleButton() { return $('.example button')}
+    deleteButton(index) { return $(`#elements button:nth-child(${index})`)}
+
+    get pageButton() {return $('#checkbox-example button')}
+
+    clickPageButton() {
+        this.pageButton.waitForDisplayed()
+        this.pageButton.click()
+    }
+
+    /** 
+    * Click the Example Button
+    */
+    clickExampleButton() {
+        this.exampleButton.waitForDisplayed()
+        this.exampleButton.click()
+    }
+
+    /**
+    * Clicks the delete button
+    * @param {Number} index index of the element
+    */
+    clickDeleteButton(index) {
+        this.deleteButton(index).waitForDisplayed()
+        this.deleteButton(index).click()
+    }
+
+    /**
+     * Click the Enable / Disable button
+     */
+    clickEnableButton() {
+        this.enableButton.waitForDisplayed()
+        this.enableButton.click()
+    }
+
     /**
      * Click the specified JS alert button
      * @param {Number} index the index of the element
