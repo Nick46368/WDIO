@@ -4,7 +4,8 @@
   "description": "Tutorial",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/wdio ./wdio.conf.js"
+    "test": "./node_modules/.bin/wdio ./wdio.conf.js",
+    "waiters": "./node_modules/.bin/wdio ./wdio.conf.js --suite waiters"
   },
   "author": "Baal",
   "license": "ISC",
@@ -23,6 +24,7 @@
     "webdriverio": "^5.23.0"
   },
   "dependencies": {
-    "@wdio/cli": "^6.5.2"
+    "@wdio/cli": "^6.5.2",
+    "cross-env": "^7.0.2"
   }
 }

@@ -1,3 +1,11 @@
+const url = require('./urls')
+const ENV = process.env.ENV
+
+if(!ENV || !['qa', 'dev', 'staging'].includes(ENV)) {
+    console.log('Please use the correct env for value: ENV = qa | dev | staging')
+    process.exit()
+}
+
 exports.config = {
     // debug: true,
     // execArgv: ['--inspect-brk=127.0.0.1:5859'],
@@ -21,6 +29,12 @@ exports.config = {
     specs: [
         './test/**/*.js'
     ],
+
+    suites: {
+        waiters: [
+            './test/waiters/*.js'
+        ]
+    },
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -92,7 +106,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://the-internet.herokuapp.com/',
+    baseUrl: url[process.env.ENV],
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
