@@ -1,5 +1,5 @@
 const { assert } = require("chai");
-const internetPage = require("../pages/internet.page");
+const internetPage = require("../../pages/internet.page");
 
 describe('Should wait for enabled input field', function() {
     it('Should wait for the input field is enabled', () => {

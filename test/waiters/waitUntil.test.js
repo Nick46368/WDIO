@@ -1,5 +1,5 @@
 const { assert } = require("chai");
-const internetPage = require("../pages/internet.page");
+const internetPage = require("../../pages/internet.page");
 
 describe('Wait until', function(){
     it('Should wait until the button text changes to Add', () => {

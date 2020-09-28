@@ -1,5 +1,5 @@
 const { assert } = require("chai");
-const internetPage = require("../pages/internet.page");
+const internetPage = require("../../pages/internet.page");
 
 describe('Wait For Exist', function() {
     it('Should wait until the delete button will appear', () => {
